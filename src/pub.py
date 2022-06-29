@@ -4,7 +4,11 @@ class Pub:
     def __init__(self, _name, _till):
         self.name = _name
         self.till = _till
-        self.drinks = []
+        self.stock = {}
     
-    def add_drink(self, drink):
-        self.drinks.append(drink)
+    def check_stock_value(self):
+        total = 0
+        stock = self.stock.keys()
+        for drink in stock:
+            total += (drink.price * self.stock[drink])
+        return total
